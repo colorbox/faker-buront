@@ -16,7 +16,7 @@ module Faker
     end
 
     def self.titles
-      %i(ls_reliability aeris)
+      saying_hash.keys
     end
   end
 end
