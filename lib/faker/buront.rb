@@ -4,20 +4,25 @@ require 'faker/buront/version'
 
 module Faker
   module Buront
-    def self.saying_oneline
-      random_saying[:body].split("\n").sample
+    def self.random_saying_oneline
+      random_title = keys.sample
+      saying_oneline(random_title)
     end
 
     def self.random_saying
-      random_title = titles.sample
+      random_title = keys.sample
       saying(random_title)
+    end
+
+    def self.saying_oneline(title)
+      saying_hash[title][:body].split("\n").sample
     end
 
     def self.saying(title)
       saying_hash[title]
     end
 
-    def self.titles
+    def self.keys
       saying_hash.keys
     end
 
