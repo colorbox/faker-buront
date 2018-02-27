@@ -4,7 +4,7 @@ require 'faker/buront/version'
 
 module Faker
   module Buront
-    def self.random_saying_oneline
+    def self.random_saying_body_oneline
       random_title = keys.sample
       saying_oneline(random_title)
     end
@@ -14,12 +14,20 @@ module Faker
       saying(random_title)
     end
 
-    def self.saying_oneline(title)
-      saying_hash[title][:body].split("\n").sample
+    def self.saying_body_oneline(key)
+      saying_hash[key][:body].split("\n").sample
     end
 
-    def self.saying(title)
-      saying_hash[title]
+    def self.saying_title(key)
+      saying_hash[key][:title]
+    end
+
+    def self.saying_body(key)
+      saying_hash[key][:body]
+    end
+
+    def self.saying(key)
+      saying_hash[key]
     end
 
     def self.keys
