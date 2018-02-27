@@ -4,7 +4,7 @@ class Faker::BurontTest < Minitest::Test
   def test_saying_returns_string
     Faker::Buront.keys.each do |key|
       saying = Faker::Buront.saying(key)
-      assert_kind_of(Hash, saying)
+      assert_kind_of(Faker::Buront::Saying, saying)
       assert_kind_of(String, Faker::Buront.saying_title(key))
       assert_kind_of(String, Faker::Buront.saying_body(key))
     end
