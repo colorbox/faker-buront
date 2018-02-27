@@ -15,7 +15,7 @@ module Faker
     end
 
     def self.saying_body_oneline(key)
-      saying(key).body_array.sample
+      saying(key).random_body_oneline
     end
 
     def self.saying_title(key)
