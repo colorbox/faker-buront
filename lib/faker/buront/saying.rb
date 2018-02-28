@@ -12,6 +12,10 @@ module Faker
         body.split("\n")
       end
 
+      def oneline
+        body_array.join
+      end
+
       def random_body_oneline
         body_array.sample
       end
