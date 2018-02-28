@@ -5,28 +5,28 @@ require 'faker/buront/saying'
 
 module Faker
   module Buront
-    def self.random_saying_body_oneline
+    def self.random_part_of_saying
       random_saying.body_array.sample
     end
 
     def self.random_saying
       random_title = keys.sample
-      saying(random_title)
+      whole_saying(random_title)
     end
 
-    def self.saying_body_oneline(key)
-      saying(key).random_body_oneline
+    def self.part_of_saying(key)
+      whole_saying(key).random_body_oneline
     end
 
     def self.saying_title(key)
-      saying(key).title
-    end
-
-    def self.saying_body(key)
-      saying(key).body
+      whole_saying(key).title
     end
 
     def self.saying(key)
+      whole_saying(key).body
+    end
+
+    def self.whole_saying(key)
       Faker::Buront::Saying.new(title: saying_hash[key][:title], body: saying_hash[key][:body])
     end
 
