@@ -3,10 +3,17 @@ require 'test_helper'
 class Faker::BurontTest < Minitest::Test
   def test_saying_returns_string
     Faker::Buront.keys.each do |key|
-      saying = Faker::Buront.whole_saying(key)
-      assert_kind_of(Faker::Buront::Saying, saying)
       assert_kind_of(String, Faker::Buront.saying_title(key))
       assert_kind_of(String, Faker::Buront.saying(key))
+      assert_kind_of(String, Faker::Buront.random_saying)
+      assert_kind_of(String, Faker::Buront.random_part_of_saying)
+    end
+  end
+
+  def test_saying_returns_saying
+    Faker::Buront.keys.each do |key|
+      saying = Faker::Buront.whole_saying(key)
+      assert_kind_of(Faker::Buront::Saying, saying)
     end
   end
 
