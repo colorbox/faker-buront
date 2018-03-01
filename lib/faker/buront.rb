@@ -6,10 +6,14 @@ require 'faker/buront/saying'
 module Faker
   module Buront
     def self.random_part_of_saying
-      random_saying.body_array.sample
+      random_whole_saying.body_array.sample
     end
 
     def self.random_saying
+      random_whole_saying.body
+    end
+
+    def self.random_whole_saying
       random_title = keys.sample
       whole_saying(random_title)
     end
