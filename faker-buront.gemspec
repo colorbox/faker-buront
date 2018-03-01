@@ -9,6 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["colorbox"]
   spec.email         = ["colorbox222@gmail.com"]
 
+  spec.summary       = %q{faker Buront implementation}
+  spec.description   = %q{You can use a collection of buront's sayings}
   spec.homepage      = "https://github.com/colorbox/faker-buront"
   spec.license       = "MIT"
 
