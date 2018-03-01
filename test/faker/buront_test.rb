@@ -5,6 +5,7 @@ class Faker::BurontTest < Minitest::Test
     Faker::Buront.keys.each do |key|
       assert_kind_of(String, Faker::Buront.saying_title(key))
       assert_kind_of(String, Faker::Buront.saying(key))
+      assert_kind_of(String, Faker::Buront.random_saying_title)
       assert_kind_of(String, Faker::Buront.random_saying)
       assert_kind_of(String, Faker::Buront.random_part_of_saying)
     end
@@ -21,9 +22,9 @@ class Faker::BurontTest < Minitest::Test
     expect_title = 'ナイトと忍者のＬＳ信頼度は違いすぎた'
     assert_equal(expect_title, Faker::Buront.saying_title(:ls_reliability))
 
-    expect_body_first_line = 'やはり忍者よりナイトの方が頼りにされていた'
-    actual_body_first_line = Faker::Buront.saying(:ls_reliability).split("\n").first
-    assert_equal(expect_body_first_line, actual_body_first_line)
+    expect_body_first_oneline = 'やはり忍者よりナイトの方が頼りにされていた'
+    actual_body_first_line = Faker::Buront.whole_saying(:ls_reliability).body_array.first
+    assert_equal(expect_body_first_oneline, actual_body_first_line)
   end
 
   def test_with_fooly_silly

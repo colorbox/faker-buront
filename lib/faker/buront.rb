@@ -9,8 +9,12 @@ module Faker
       random_whole_saying.body_array.sample
     end
 
+    def self.random_saying_title
+      random_whole_saying.title
+    end
+
     def self.random_saying
-      random_whole_saying.body
+      random_whole_saying.oneline
     end
 
     def self.random_whole_saying
@@ -27,7 +31,7 @@ module Faker
     end
 
     def self.saying(key)
-      whole_saying(key).body
+      whole_saying(key).oneline
     end
 
     def self.whole_saying(key)
