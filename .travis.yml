@@ -9,3 +9,12 @@ rvm:
 jobs:
   allow_failures:
     - rvm: ruby-head
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: gjRDcYMJGjRIj63H5ozEShI6rWp4QEA2fCo93Z+6QRs7HSCizMg1qGh3oZOL7A2ifKBcPs1LJ23+xy8FzKJPFPMPTB3DLxx0ZeiVdkCOkVUtckO2X+YzJiR61hdIrdklzmKe88bev9bgl8BDIjjh/87ZmueBXzcYgnBIm5/AOyatGHnnNi7AflPRZvnPFNLIxUjaBtrZcNYORd8wPgwutZL84P3rmzXBNv/EAz6I3SFjAY/u1AX0VhF8WLYLNZ8GCqaGqWlW0P+YadeMA+KPbu1WgnxJ47T9LXYipQ154i8EnfTus6ywSXwBPdtK0AFSNrvNJEYnn0UVUwS8qZIQk1TbZroMkNNiHvWXWPsekbOqpeGzAYcTsUYfQV/Orme/bIf3Xn5EZ50ISF2h4+EA3VRJze/733Nm+51Z5liDHNVhGXyREGyavBHYRQT39yBAq7OmfAM2tNH1OxezWVYrehxH00IoazQgNlVOBaW2RQ+CT0fQL9zoqhVMeFc+OP6Q9oianI9H6mpe9gg6ugWAQb1ycG5L+L/Qo2/+4IMF/7ol5xyc+hmGsuzSNT9fFh0A8QlsM1MUw6KuplkHLvEYdibL2ajt9cqTEo3Lw7OZ3URD0yPXk8mMutNK+3fW6MO73vWJQRGGNCLbbC4SPAQzo+TgpOiWv4sV8JmlJVJkwok=
+  gem: faker-buront
+  on:
+    tags: true
+    repo: colorbox/faker-buront
