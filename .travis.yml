@@ -7,7 +7,7 @@ rvm:
   - ruby-head
 
 before_install:
-  - gem install -v 2.1.2 bundler
+  - gem install -v 2.1.4 bundler
 
 jobs:
   allow_failures:
