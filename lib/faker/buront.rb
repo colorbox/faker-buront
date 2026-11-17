@@ -1,4 +1,4 @@
-require 'active_support/all'
+require 'active_support/core_ext/hash/keys'
 require 'yaml'
 require 'faker/buront/version'
 require 'faker/buront/saying'
