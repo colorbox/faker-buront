@@ -42,11 +42,10 @@ module Faker
       saying_hash.keys
     end
 
-    private
-
     def self.saying_hash
       saying_file = "#{File.dirname(__FILE__)}/../../config/saying.yml"
       @saying_hash ||= YAML.load_file(saying_file).deep_symbolize_keys
     end
+    private_class_method :saying_hash
   end
 end
