@@ -9,7 +9,7 @@ module Faker
       end
 
       def body_array
-        body.split("\n")
+        body.split("\n").reject { |line| line.strip.empty? }
       end
 
       def oneline
