@@ -35,7 +35,7 @@ module Faker
     end
 
     def self.whole_saying(key)
-      Faker::Buront::Saying.new(title: saying_hash[key][:title], body: saying_hash[key][:body])
+      Faker::Buront::Saying.new(title: saying_hash[key][:title].dup, body: saying_hash[key][:body].dup)
     end
 
     def self.keys
