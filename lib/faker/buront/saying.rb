@@ -3,7 +3,7 @@ module Faker
     class Saying
       attr_accessor :title, :body
 
-      def initialize(title: arg_title,body: arg_body)
+      def initialize(title:, body:)
         self.title = title
         self.body = body
       end
