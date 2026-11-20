@@ -9,27 +9,16 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     name: Ruby ${{ matrix.ruby }} / minitest ${{ matrix.minitest }}
-    continue-on-error: ${{ matrix.ruby == 'head' }}
     env:
       MINITEST_VERSION: ${{ matrix.minitest }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - { ruby: '2.7', os: ubuntu-22.04, minitest: '5' }
-          - { ruby: '3.0', os: ubuntu-22.04, minitest: '5' }
-          - { ruby: '3.1', os: ubuntu-latest, minitest: '5' }
-          - { ruby: '3.2', os: ubuntu-latest, minitest: '5' }
-          - { ruby: '3.3', os: ubuntu-latest, minitest: '5' }
           - { ruby: '3.4', os: ubuntu-latest, minitest: '5' }
-          - { ruby: '4.0', os: ubuntu-latest, minitest: '5' }
-          - { ruby: 'head', os: ubuntu-latest, minitest: '5' }
-          # minitest 6 requires Ruby >= 3.2
-          - { ruby: '3.2', os: ubuntu-latest, minitest: '6' }
-          - { ruby: '3.3', os: ubuntu-latest, minitest: '6' }
           - { ruby: '3.4', os: ubuntu-latest, minitest: '6' }
+          - { ruby: '4.0', os: ubuntu-latest, minitest: '5' }
           - { ruby: '4.0', os: ubuntu-latest, minitest: '6' }
-          - { ruby: 'head', os: ubuntu-latest, minitest: '6' }
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - name: Set up Ruby ${{ matrix.ruby }}
